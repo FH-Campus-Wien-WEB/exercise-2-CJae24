@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const movieModel = require('./movie-model.js');
+const {movies} = require('./movie-model.js');
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'files')));
 app.get('/movies', function (req, res) {
   /* Task 1.2. Remove the line below and eturn the movies from 
      the model as an array */
-  res.sendStatus(404)
+  res.json(Object.values(movies));
 })
 
 // Configure a 'get' endpoint for a specific movie
