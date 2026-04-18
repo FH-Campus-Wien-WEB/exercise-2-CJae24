@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Movie</title>
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="edit.css" />
+</head>
+
+<body>
+  <h1>Edit Movie</h1>
+
+  <form id="edit-form">
+    <!-- IMDb ID (nicht editierbar) -->
+    <input type="hidden" id="imdbID" />
+
+    <div>
+      <label for="Title">Title</label>
+      <input id="Title" type="text" required />
+    </div>
+
+    <div>
+      <label for="Released">Released</label>
+      <input id="Released" type="date" required />
+    </div>
+
+    <div>
+      <label for="Runtime">Runtime</label>
+      <input id="Runtime" type="number" required />
+    </div>
+
+    <div>
+      <label for="Plot">Plot</label>
+      <textarea id="Plot" rows="5" required></textarea>
+    </div>
+
+    <div>
+      <label for="Genres">Genres</label>
+      <select id="Genres" multiple required>
+        <option>Action</option>
+        <option>Adventure</option>
+        <option>Animation</option>
+        <option>Biography</option>
+        <option>Comedy</option>
+        <option>Crime</option>
+        <option>Documentary</option>
+        <option>Drama</option>
+        <option>Fantasy</option>
+        <option>Horror</option>
+        <option>Mystery</option>
+        <option>Romance</option>
+        <option>Sci-Fi</option>
+        <option>Thriller</option>
+        <option>War</option>
+        <option>Western</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="Directors">Directors</label>
+      <input id="Directors" type="text" required />
+    </div>
+
+    <div>
+      <label for="Writers">Writers</label>
+      <input id="Writers" type="text" required />
+    </div>
+
+    <div>
+      <label for="Actors">Actors</label>
+      <input id="Actors" type="text" required />
+    </div>
+
+    <div>
+      <label for="Poster">Poster URL</label>
+      <input id="Poster" type="url" required />
+    </div>
+
+    <div>
+      <label for="Metascore">Metascore</label>
+      <input id="Metascore" type="number" min="0" max="100" />
+    </div>
+
+    <div>
+      <label for="imdbRating">IMDb Rating</label>
+      <input id="imdbRating" type="number" step="0.1" min="0" max="10" />
+    </div>
+
+    <div>
+      <button type="button" onclick="putMovie()">Save</button>
+      <button type="button" onclick="location.href='index.html'">Cancel</button>
+    </div>
+  </form>
+
+  <script src="edit.js"></script>
+</body>
+</html>

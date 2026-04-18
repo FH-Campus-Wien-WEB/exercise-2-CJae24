@@ -44,6 +44,11 @@ window.onload = function () {
           </section>
           <button class="edit-button">Edit</button>
         `;
+
+        const editButton = movieElement.querySelector(".edit-button");
+          editButton.onclick = function () {
+          location.href = "edit.html?imdbID=" + movie.imdbID;
+};
           bodyElement.appendChild(movieElement);
       }
 

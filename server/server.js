@@ -20,10 +20,16 @@ app.get('/movies', function (req, res) {
 
 // Configure a 'get' endpoint for a specific movie
 app.get('/movies/:imdbID', function (req, res) {
-  /* Task 2.1. Remove the line below and add the 
-    functionality here */
-  res.sendStatus(404)
-})
+  const movieID = req.params.imdbID;
+  const movie = movies[movieID];
+
+  if (movie) {
+    res.json(movie);       // Gibt den gefundenen Film zurück
+  } else {
+    res.sendStatus(404);   // Falls nicht vorhanden
+  }
+});
+
 
 /* Task 3.1 and 3.2.
    - Add a new PUT endpoint
